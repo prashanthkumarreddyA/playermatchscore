@@ -148,7 +148,7 @@ app.get("/players/:playerId/playerScores", async (request, response) => {
       player_details.player_id = ${playerId}
     Group by 
     player_details.player_id;`;
-  const playerMatchDetails = await db.all(getPlayerMatchQuery);
+  const playerMatchDetails = await db.get(getPlayerMatchQuery);
   console.log(playerId);
   response.send(playerMatchDetails);
 });
